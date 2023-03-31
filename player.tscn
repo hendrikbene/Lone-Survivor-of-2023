@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7h27nbtgv8i8"]
+[gd_scene load_steps=17 format=3 uid="uid://b7h27nbtgv8i8"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_2seao"]
 [ext_resource type="Texture2D" uid="uid://532rj4tqub7b" path="res://art/Adam_16x16.png" id="2_gbwur"]
@@ -27,8 +27,37 @@ region = Rect2(64, 32, 16, 32)
 atlas = ExtResource("2_gbwur")
 region = Rect2(32, 32, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_32ila"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(192, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx16o"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(208, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxddd"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(224, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trixo"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(240, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oinf8"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(256, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il283"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(272, 32, 16, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xbtn5"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q8v8p")
@@ -51,6 +80,34 @@ animations = [{
 "loop": true,
 "name": &"walk_left",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32ila")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx16o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxddd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trixo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oinf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il283")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_41oid"]
@@ -62,10 +119,11 @@ texture_filter = 1
 scale = Vector2(5, 5)
 motion_mode = 1
 script = ExtResource("1_2seao")
+speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xbtn5")
-animation = &"walk_left"
+animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
