@@ -1,8 +1,10 @@
 2a60927148abd1d33b818b535e306557
-::res://::1680077124
+::res://::1680265368
 icon.svg::CompressedTexture2D::3317425571049388635::1679923555::1679923567::1::::<><>::
-Player.gd::GDScript::-1::1679947847::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::4648611513818718173::1680077118::0::1::::<><>::res://Player.gd
+package-lock.json::JSON::-1::1680100021::0::1::::<><>::
+package.json::JSON::-1::1680100021::0::1::::<><>::
+Player.gd::GDScript::-1::1680098971::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::4648611513818718173::1680077657::0::1::::<><>::res://Player.gd<>uid://532rj4tqub7b
 README.md::TextFile::-1::1679924238::0::1::::<><>::
 ::res://art/::1680077118
 Adam_16x16.png::CompressedTexture2D::2165138121950645125::1679947939::1680077118::1::::<><>::

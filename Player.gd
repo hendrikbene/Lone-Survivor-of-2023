@@ -19,7 +19,4 @@ func _process(_delta): # every frame
 	focus_on_mouse()
 	
 func focus_on_mouse():
-	
-	
-	
-
+	look_at(get_global_mouse_position())
