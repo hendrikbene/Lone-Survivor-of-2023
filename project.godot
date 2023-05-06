@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="Lone Survivor of 2023"
-run/main_scene="res://Player.tscn"
+run/main_scene="res://lvl1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/resizable=false
-window/stretch/mode="viewport"
+window/vsync/vsync_mode=2
 
 [importer_defaults]
 
@@ -26,7 +28,7 @@ image={}
 
 [input]
 
-l_m_b={
+left_mouse_button={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(622, 7),"global_position":Vector2(627, 59),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
 ]
@@ -34,4 +36,4 @@ l_m_b={
 
 [rendering]
 
-anti_aliasing/quality/msaa_2d=1
+textures/vram_compression/import_s3tc_bptc=false

@@ -1,6 +1,13 @@
+Timer
+CollisionPolygon2D
+TileMap
+StaticBody2D
+CollisionShape2D
+CharacterBody2D
+Node2D
+RichTextLabel
+Label
 AnimationPlayer
 AnimatedSprite2D
-CollisionShape2D
 Sprite2D
-CharacterBody2D
 RigidBody2D

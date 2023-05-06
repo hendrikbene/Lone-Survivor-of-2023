@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7h27nbtgv8i8"]
+[gd_scene load_steps=36 format=3 uid="uid://84f6to4q1ov1"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_2seao"]
 [ext_resource type="Texture2D" uid="uid://532rj4tqub7b" path="res://art/Adam_16x16.png" id="2_gbwur"]
+[ext_resource type="Texture2D" uid="uid://ccskcss4eg6y5" path="res://art/player.svg" id="3_7q5y1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrn7v"]
 atlas = ExtResource("2_gbwur")
@@ -26,6 +27,30 @@ region = Rect2(336, 32, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nmvq"]
 atlas = ExtResource("2_gbwur")
 region = Rect2(352, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciuu1"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(96, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dclg6"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(112, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kppl5"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(128, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv3op"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(144, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk7k4"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(160, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snskw"]
+atlas = ExtResource("2_gbwur")
+region = Rect2(176, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we2k6"]
 atlas = ExtResource("2_gbwur")
@@ -121,7 +146,30 @@ animations = [{
 "texture": SubResource("AtlasTexture_0nmvq")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciuu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dclg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kppl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv3op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk7k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snskw")
+}],
+"loop": true,
+"name": &"idle_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -198,17 +246,28 @@ animations = [{
 radius = 6.0
 height = 21.2
 
-[node name="Player" type="CharacterBody2D"]
-texture_filter = 1
-scale = Vector2(5, 5)
-motion_mode = 1
+[node name="lvl1" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+scale = Vector2(2, 2)
 script = ExtResource("1_2seao")
-metadata/_edit_vertical_guides_ = []
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_xbtn5")
-animation = &"idle"
+animation = &"idle_down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_41oid")
+
+[node name="Label" type="Label" parent="Player"]
+offset_left = 11.0
+offset_top = 3.0
+offset_right = 22.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Wall" type="Sprite2D" parent="."]
+position = Vector2(152, 91)
+texture = ExtResource("3_7q5y1")
